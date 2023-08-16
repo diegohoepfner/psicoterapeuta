@@ -2,7 +2,7 @@ const chatLog = document.getElementById("chat-log");
 const userInput = document.getElementById("user-input");
 const sendButton = document.getElementById("send-btn");
 
-sendButton.addEventListener("click", () => {
+function sendMessage() {
     const userMessage = userInput.value;
     userInput.value = "";
 
@@ -18,7 +18,7 @@ sendButton.addEventListener("click", () => {
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{ role: "system", content: "Você é um psicoterapeuta rogeriano que simula o comportamento do chatbot Eliza" }, { role: "user", content: userMessage }]
+            messages: [{ role: "system", content: "Você é um psicoterapeuta rogeriano." }, { role: "user", content: userMessage }]
         })
     })
     .then(response => response.json())
@@ -28,4 +28,15 @@ sendButton.addEventListener("click", () => {
         // Adicione a resposta do bot ao chat
         chatLog.innerHTML += `<div class="bot-message">${botReply}</div>`;
     });
+}
+
+sendButton.addEventListener("click", () => {
+    sendMessage();
+});
+
+userInput.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Evita a quebra de linha padrão do Enter
+        sendMessage();
+    }
 });
