@@ -14,11 +14,11 @@ sendButton.addEventListener("click", () => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer SUA_API_KEY"
+            "Authorization": "Bearer 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"
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{ role: "system", content: "Você é um psicoterapeuta rogeriano." }, { role: "user", content: userMessage }]
+            messages: [{ role: "system", content: "Você é um psicoterapeuta rogeriano que simula o comportamento do chatbot Eliza" }, { role: "user", content: userMessage }]
         })
     })
     .then(response => response.json())
