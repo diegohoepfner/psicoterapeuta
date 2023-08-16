@@ -15,7 +15,7 @@ async function sendMessage() {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": "Bearer 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"
+				"Authorization": "Bearer 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"
 			},
 			body: JSON.stringify({
 				model: "gpt-3.5-turbo",
