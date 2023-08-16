@@ -24,6 +24,7 @@ async function sendMessage() {
 		});
 
         const data = await response.json();
+	console.log(data)
         const botReply = data.choices[0].message.content;
 
         // Adicione a resposta do bot ao chat
