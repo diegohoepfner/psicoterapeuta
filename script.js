@@ -18,7 +18,7 @@ function sendMessage() {
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{ role: "system", content: "Você é um psicoterapeuta rogeriano." }, { role: "user", content: userMessage }]
+            messages: [{ role: "system", content: "Você é um psicoterapeuta rogeriano que simula o comportamento do chatbot Eliza" }, { role: "user", content: userMessage }]
         })
     })
     .then(response => response.json())
@@ -27,6 +27,9 @@ function sendMessage() {
 
         // Adicione a resposta do bot ao chat
         chatLog.innerHTML += `<div class="bot-message">${botReply}</div>`;
+
+        // Role o chat automaticamente para exibir a última mensagem
+        chatLog.scrollTop = chatLog.scrollHeight;
     });
 }
 
@@ -35,7 +38,7 @@ sendButton.addEventListener("click", () => {
 });
 
 userInput.addEventListener("keydown", event => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && !event.shiftKey) {
         event.preventDefault(); // Evita a quebra de linha padrão do Enter
         sendMessage();
     }
