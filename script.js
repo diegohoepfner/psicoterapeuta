@@ -8,6 +8,7 @@ async function sendMessage() {
 
     // Adicione a mensagem do usuário ao chat
     chatLog.innerHTML += `<div class="user-message">${userMessage}</div>`;
+    const apiKey = process.env.OPENAI_API_KEY;
 
     // Faça uma chamada à API do ChatGPT
     try {
@@ -15,7 +16,7 @@ async function sendMessage() {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": "Bearer A78zHUJAnSyyZqeGp8u6T3BlbkFJWTElvIoPrb6ohDLKUZ2G"
+				"Authorization": "Bearer ${apiKey}"
 			},
 			body: JSON.stringify({
 				model: "gpt-3.5-turbo",
