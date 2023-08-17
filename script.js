@@ -1,4 +1,4 @@
-rconst chatLog = document.getElementById("chat-log");
+const chatLog = document.getElementById("chat-log");
 const userInput = document.getElementById("user-input");
 const sendButton = document.getElementById("send-btn");
 
