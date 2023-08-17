@@ -1,4 +1,4 @@
-const chatLog = document.getElementById("chat-log");
+rconst chatLog = document.getElementById("chat-log");
 const userInput = document.getElementById("user-input");
 const sendButton = document.getElementById("send-btn");
 
@@ -8,7 +8,7 @@ async function sendMessage() {
 
     // Adicione a mensagem do usuário ao chat
     chatLog.innerHTML += `<div class="user-message">${userMessage}</div>`;
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = secrets.OPENAI_API_KEY;
 
     // Faça uma chamada à API do ChatGPT
     try {
