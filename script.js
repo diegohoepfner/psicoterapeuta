@@ -20,7 +20,7 @@ async function sendMessage() {
 			},
 			body: JSON.stringify({
 				model: "gpt-3.5-turbo",
-				messages: [{ role: "system", content: "Você é um psicoterapeuta rogeriano que simula o comportamento do chatbot Eliza" }, { role: "user", content: userMessage }]
+				messages: [{ role: "system", content: "Você é um psicoterapeuta rogeriano que simula o comportamento do chatbot Eliza. Nenhuma resposta pode começar com qualquer tipo de saudação" }, { role: "user", content: userMessage }]
 			})
 		});
 
